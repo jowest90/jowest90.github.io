@@ -28,8 +28,20 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   // let items = document.getElementById('faultyItems');
-  if(pilot===""||copilot===""||fuelLevel===""||cargoLevel===""||isNaN(fuelLevel)||isNaN(cargoLevel)){
+  if(pilot===""&&copilot===""&&fuelLevel===""&&cargoLevel===""){
      return alert("All fields are required!");
+  }else if(validateInput(pilot)==='Empty'){
+    return alert("Pilot needs a Name!");
+  }else if(validateInput(copilot)==='Empty'){
+    return alert("Copilot needs a Name!");
+  }else if(validateInput(fuelLevel)==='Empty'){
+    return alert("Needs fuel!");
+  }else if(validateInput(cargoLevel)==='Empty'){
+    return alert("Needs cargo!");
+  }else if(validateInput(fuelLevel)==='Not a Number'){
+    return alert("FuelLevel needs to be a number!");
+  }else if(validateInput(cargoLevel)==='Not a Number'){
+    return alert("CargoLevel needs to be a number!");
   }else{
     let launchStatus = document.getElementById('launchStatus');
     let fuelStatus = document.getElementById('fuelStatus');

@@ -10,7 +10,6 @@ window.addEventListener("load", function() {
   let listedPlanetsResponse= myFetch();
   listedPlanetsResponse.then(function (result) {
       listedPlanets = result;
-      pickPlanet(listedPlanets);
       let target = pickPlanet(listedPlanets);
         addDestinationInfo(document, target.name, target.diameter, target.star, target.distance, target.moons, target.image)
   }).then(function () {
